@@ -1,516 +1,263 @@
+/* -------------------------------------------------------------------
+ * Modern Red Theme for reveal.js
+ * Built: 2025‑07‑15
+ * Palette:
+ *   Primary   – #e93b3a
+ *   Secondary – #b80008
+ *   Accent    – #ff5959
+ *   Background– #000000
+ *   Text      – #ffffff
+ * Fonts: "Days One" (headings) & "Maven Pro" (body)
+ * ------------------------------------------------------------------- */
 
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Maven+Pro:wght@400;500;700&display=swap');
+
+/* --------------------------------------------------
+   Core color variables (CSS custom properties)
+   -------------------------------------------------- */
 :root {
-  --primary-color: #ff0000; /* Reines Rot für maximale Sichtbarkeit */
-  --secondary-color: #ffffff; /* Reinweiß für starken Kontrast */
-  --background-color: linear-gradient(135deg, #000000 0%, #000033 100%); /* Tiefes Schwarz mit dunklem Blau */
-  --success-color: #00ff00; /* Neon-Grün für klare Unterscheidung */
-  --error-color: #ff3300; /* Knalliges Orange-Rot für Fehler */
-  --warning-color: #ffcc00; /* Helles Gelb für Warnungen */
-  --highlight-color: #00ffff; /* Cyan für zusätzliche Hervorhebungen */
-  --accent-color: #ff00ff; /* Magenta für Kontrast-Elemente */    
+  --color-primary: #e93b3a;
+  --color-secondary: #b80008;
+  --color-accent: #ff5959;
+  --color-background: #000000;
+  --color-text: #ffffff;
+
+  --heading-1: #ffffff;
+  --heading-2: #e5e5e5;
+  --heading-3: #cccccc;
+  --heading-4: #b3b3b3;
+  --heading-5: #999999;
+  --heading-6: #808080;
 }
 
-body {
-  background: var(--background-color);
-  color: var(--secondary-color);
-  font-family: "Arial", sans-serif;
-  margin: 0;
+/* --------------------------------------------------
+   Global element styling / defaults
+   -------------------------------------------------- */
+.reveal {
+  font-family: 'Maven Pro', sans-serif;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-size: 28px;
+  /* base scaling unit */
+}
+
+/* Typography hierarchy */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  font-family: 'Days One', sans-serif;
+  font-weight: 400;
+  margin: 0.1em 0 0.4em;
+  line-height: 1.2;
+}
+
+.reveal h1 {
+  color: var(--heading-1);
+  font-size: 2.4em;
+}
+
+.reveal h2 {
+  color: var(--heading-2);
+  font-size: 2.0em;
+}
+
+.reveal h3 {
+  color: var(--heading-3);
+  font-size: 1.6em;
+}
+
+.reveal h4 {
+  color: var(--heading-4);
+  font-size: 1.4em;
+}
+
+.reveal h5 {
+  color: var(--heading-5);
+  font-size: 1.2em;
+}
+
+.reveal h6 {
+  color: var(--heading-6);
+  font-size: 1.0em;
+}
+
+/* Paragraphs */
+.reveal p {
+  margin: 0.6em 0;
+  line-height: 1.45;
+}
+
+/* Links & interactive elements */
+.reveal a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.reveal a:hover,
+.reveal a:focus {
+  color: var(--color-primary);
+}
+
+/* Buttons (anchor‑based) */
+.reveal .button {
+  background: var(--color-primary);
+  color: var(--color-text);
+  padding: 0.35em 1.1em;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.35s ease;
+}
+
+.reveal .button:hover {
+  background: var(--color-accent);
+}
+
+/* --------------------------------------------------
+   Slide Layout Presets
+   Add the described class to a <section>
+   -------------------------------------------------- */
+/* Bullet Point Slides – `class="bullet-slide"` */
+.bullet-slide ul {
+  list-style: disc outside;
+  margin: 0 0 0 1em;
   padding: 0;
 }
 
-.reveal section h2 {
-  color: var(--primary-color);
-  text-shadow: 0px 2px 3px #ff0000;
-  /* Leichter Glow */
-  font-size: 1.5em;
-}
-
-.reveal section p,
-.reveal section ul {
-  color: var(--secondary-color);
+.bullet-slide li {
+  margin: 0.3em 0;
   font-size: 0.9em;
-  line-height: 1.3;
 }
 
-.slider-container {
-  position: relative;
-  width: 80%;
-  height: 480px;
-  max-width: 1000px;
-  margin: auto;
-  overflow: hidden auto;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.747);
-}
-
-.slider {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-}
-
-.slide {
-  min-width: 100%;
-  display: flex;
-  /* Bild und Text nebeneinander */
-  align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.318);
-  /* Leicht abgesetzter Hintergrund */
-  border-radius: 10px;
-}
-
-.slide-content {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-/* Bild-Anpassung */
-.slide-image {
-  width: 50%;
-  /* Bild nimmt 50% der Breite ein */
-  height: auto;
-  max-height: 400px; 
-  border-radius: 10px;
-  object-fit: contain;
-  /* Verhindert Verzerrungen */
-}
-
-/* Das hier geht nur für die Slider 1 version und nicht für die Slider mit text*/
-.slide .slide-image-RawImages,
-.slide .slide-image-RawVideos {
-  width: 100%;
-  /* Bild nimmt 50% der Breite ein */
-  height: 100%;
-  max-height: 400px; 
-  /* Bild füllt die volle Höhe des Containers */
-  object-fit: contain;
-  /* Bild bleibt proportional und wird nicht verzerrt */
+/* Image‑centric Slides – `class="img-slide"` */
+.img-slide img {
   display: block;
+  max-width: 80%;
+  max-height: 80vh;
+  margin: 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
 }
 
-.reveal section .slide-text p,
-.reveal section .slide-text ul {
-  color: var(--secondary-color);
-  font-size: 0.6em;
-  line-height: 1.3;
+/* Video Slides – `class="video-slide"` */
+.video-slide video,
+.video-slide iframe {
+  display: block;
+  max-width: 80%;
+  max-height: 80vh;
+  margin: 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
 }
 
-/* Text-Anpassung */
-.slide-text {
-  width: 50%;
-  /* Text nimmt 50% der Breite ein */
-  padding: 10px;
+/* Text‑centric Slides – `class="text-slide"` */
+.text-slide {
+  max-width: 80%;
+  margin: 0 auto;
+  font-size: 0.95em;
 }
 
-.slide-text h3 {
-  color: #ff0000;
-  font-size: 0.9em;
-  margin-bottom: 10px;
+/* Media appear animation */
+.img-slide img,
+.video-slide video,
+.video-slide iframe {
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.slide-text p {
-  color: white;
+.present .img-slide img,
+.present .video-slide video,
+.present .video-slide iframe {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Badges / labels */
+.badge {
+  background: var(--color-accent);
+  color: var(--color-background);
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
   font-size: 0.7em;
-  line-height: 1;
+  text-transform: uppercase;
 }
 
-/* Navigation */
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #ff0000;
-  color: white;
-  border: none;
-  padding: 12px 16px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+/* Icon helpers (requires icon font or inline SVG) */
+.icon-primary {
+  color: var(--color-primary);
 }
 
-.prev:hover,
-.next:hover {
-  background: #ff0000;
-  box-shadow: 0px 4px 10px rgba(230, 57, 71, 0.805);
+.icon-secondary {
+  color: var(--color-secondary);
 }
 
-.prev {
-  left: 10px;
+/* Code blocks */
+.reveal pre code {
+  background: #111;
+  border-radius: 6px;
+  padding: 0.6em 0.8em;
+  font-size: 0.8em;
+  line-height: 1.4;
 }
 
-.next {
-  right: 10px;
+/* Horizontal rule */
+.reveal hr {
+  border: 0;
+  border-top: 2px solid var(--color-accent);
+  margin: 1em auto;
+  width: 60%;
 }
 
-/* Stil für die Partner-Sektion */
-.partners {
-  text-align: center;
-  padding: 40px 20px;
-  background: #2b131300;
-  /* Dunkler Hintergrund */
-  color: white;
-  max-width: 100%;
-  /* Stellt sicher, dass nichts über die Folie hinausgeht */
+/* Tables */
+.reveal table {
+  border-collapse: collapse;
+  font-size: 0.8em;
+  margin: 0 auto;
 }
 
-/* Flexbox für eine horizontale Anordnung */
-.partner-container {
-  display: flex;
-  flex-wrap: wrap;
-  /* Falls zu viele Elemente, gehen sie in die nächste Zeile */
-  justify-content: center;
-  /* Zentriert die Logos */
-  align-items: center;
-  gap: 20px;
-  /* Abstand zwischen den Boxen */
-  max-width: 90%;
-  /* Passt sich an die Folienbreite an */
-  margin: auto;
-  padding-top: 20px;
-  overflow: hidden;
-  /* Verhindert, dass Logos über die Folie hinausragen */
+.reveal th,
+.reveal td {
+  border: 1px solid #222;
+  padding: 0.4em 0.8em;
 }
 
-/* Einzelne Partner-Box */
-.partner {
-  background: rgba(255, 255, 255, 0.384);
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  /* Feste Breite pro Partner-Logo */
-  height: 120px;
-  /* Feste Höhe pro Box */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.599);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+.reveal th {
+  background: #111;
+  color: var(--color-accent);
 }
 
-/* Hover-Effekt */
-.partner:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.719);
+/* Alternate section backgrounds */
+.section-primary {
+  background: var(--color-primary);
+  color: var(--color-text);
 }
 
-/* Logos in der Box */
-.partner img {
-  border-radius: 10px;
-  max-width: 100%;
-  max-height: 120px;
-  object-fit: contain;
-  filter: grayscale(50%);
-  transition: filter 0.3s ease;
+.section-secondary {
+  background: var(--color-secondary);
+  color: var(--color-text);
 }
 
-/* Bei Hover werden die Logos farbig */
-.partner:hover img {
-  filter: grayscale(0%);
+.section-accent {
+  background: var(--color-accent);
+  color: var(--color-background);
 }
 
-.links {
-  text-align: center;
-  padding: 20px 20px;
-  background: #140a0a7b; /* Dunkler Hintergrund */
-  color: #ff0000;
-  max-width: 100%; /* Stellt sicher, dass nichts über die Folie hinausgeht */
+/* Responsive scaling */
+@media (max-width: 900px) {
+  .reveal {
+    font-size: 24px;
+  }
 }
 
-/* Flexbox für eine horizontale Anordnung */
-.links-container {
-  display: flex;
-  flex-wrap: wrap; /* Falls zu viele Elemente, gehen sie in die nächste Zeile */
-  justify-content: center; /* Zentriert die Links */
-  align-items: center;
-  gap: 20px; /* Abstand zwischen den Boxen */
-  max-width: 100%; /* Passt sich an die Folienbreite an */
-  margin: auto;
-  padding-top: 20px;
-  overflow: hidden; /* Verhindert, dass Inhalte über die Folie hinausragen */
+@media (max-width: 600px) {
+  .reveal {
+    font-size: 20px;
+  }
 }
 
-/* Einzelne Link-Box */
-.link {
-  position: relative; /* Ermöglicht flexibles Layout für das Bild */
-  width: 200px; /* Feste Breite pro Box */
-  height: 150px; /* Feste Höhe pro Box */
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* Verhindert, dass das Bild herausragt */
-}
-
-/* Hover-Effekt */
-.link:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.2);
-}
-
-/* Bilder nehmen den ganzen Container ein */
-.link img {
-  width: 100%;
-  height: 100%;
-  padding:5px; 
-  margin:0; 
-  object-fit: cover; /* Bild wird skaliert, ohne verzerrt zu werden */
-  border-radius: 10px; /* Gleiche Abrundung wie der Container */
-  filter: grayscale(50%);
-  transition: filter 0.3s ease;
-}
-
-/* Bei Hover werden die Bilder farbig */
-.link:hover img {
-  filter: grayscale(0%);
-}
-
-/* Container für das Video (Fullscreen & Zentriert) */
-#intro-video {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%); /* Zentriert das Video */
-width: 80%; /* Anpassung der Breite */
-max-width: 900px; /* Maximale Größe */
-height: auto;
-opacity: 0.8; /* Transparenz für leichtes Durchscheinen */
-border-radius: 15px; /* Optional: Abgerundete Ecken */
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Weiche Schatten */
-}
-
-/* Nur für Produktfolien */
-.product-slide {
-overflow: hidden; /* Verhindert Überlaufen */
-padding: 2em;     /* Optional: Abstand innerhalb der Folie */
-}
-
-/* Flex-Container für Bild und Text */
-.product {
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 1em; /* Abstand zwischen Bild und Text */
-}
-
-/* Bildbereich: links */
-.product-image {
-flex: 0 0 40%; /* Nimmt ca. 40% der Breite ein */
-max-width: 40%;
-}
-
-/* Bild anpassen, damit es nicht überläuft */
-.product-image img {
-width: 100%;
-height: auto;
-object-fit: contain;
-display: block;
-}
-
-/* Textbereich: rechts */
-.product-text {
-flex: 1 1 60%; /* Nimmt ca. 60% der Breite ein */
-}
-
-/* Optional: Text zentrieren bzw. ausrichten */
-.product-text h3,
-.product-text p {
-margin: 0 0 0.5em 0;
-font-size:1.0em;
-}
-
-.product-text ul li {
-font-size: 0.6em;
-}
-
-
-.product {
-text-align: center;
-}
-.product img {
-max-width: 80%;
-height: auto;
-margin-bottom: 1em;
-}
-.product h3 {
-margin-bottom: 0.5em;
-}
-.product p {
-margin: 0.3em 0;
-}
-/* Ansprechpartner-Bereich oberhalb der Kontakte */
-.ansprechpartner {
-margin-top: 1em;
-}
-
-/* Überschrift für den Ansprechpartner-Bereich */
-.ansprechpartner h3 {
-margin-bottom: 1em;
-font-size: 1.0em;
-text-align: center;
-}
-
-/* Flex-Container für die Kontakte */
-.contacts-container {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 2em;  /* Abstand zwischen den Boxen */
-width: 100%;
-box-sizing: border-box;
-}
-
-/* Einzelner Ansprechpartner */
-.contact {
-flex: 1 1 calc(50% - 1em); /* Nimmt ca. 50% der Breite minus Abstand ein */
-max-width: calc(50% - 1em);
-box-sizing: border-box;
-text-align: center;
-padding: 0.5em;  /* Leicht reduziert, damit die Box nicht zu groß wirkt */
-border-radius: 10px;
-}
-
-/* Styling für das Kontaktbild */
-.contact img {
-width: 150px;
-height: 150px;
-border-radius: 50%;  /* Rundes Bild */
-object-fit: cover;
-margin-bottom: 0.5em;
-}
-
-/* Weitere Typografie-Anpassungen */
-.contact h4 {
-margin: 0.5em 0 0.2em;
-font-size: 0.6em;
-}
-.ansprechpartner h3 {
-margin: 0.2em 0 0.2em;
-font-size: 0.7em;
-}
-
-.contact .position {
-font-size: 0.5em;
-font-style: italic;
-color: #666;
-}
-
-.contact .email a {
-font-size: 0.5em;
-color: #007BFF;
-text-decoration: none;
-}
-
-.contact .email a:hover { 
-text-decoration: underline;
-}
-
-.contact .phone {
-font-size: 0.5em;
-margin-top: 0.1em;
-font-weight: bold;
-}
-
-/* Responsive Anpassung: Auf schmaleren Bildschirmen werden die Boxen gestapelt */
-@media screen and (max-width: 600px) {
-.contact {
-flex: 1 1 100%;
-max-width: 100%;
-}
-}
-
-.social-container {
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-.social-icons,
-.forum-icons {
-display: flex;
-gap: 1.5rem;
-margin: 1rem 0;
-padding: 2rem; 
-}
-.social-icons a,
-.forum-icons a {
-font-size: 3rem;
-color: #fbf7f7;
-text-decoration: none;
-transition: color 0.3s;
-}
-.social-icons a:hover,
-.forum-icons a:hover {
-color: #8a1616;
-}
-
-i.fab {
-font-size: 4rem; /* oder eine andere gewünschte Größe */
-}
-
-/* Hauptcontainer: links Gerät & Fehler, rechts Messbilder */
-.analysis-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-/* Linke Seite (Bauteilbild & Fehlerliste) */
-.left-side {
-  font-size: 0.5em; 
-  width: 40%;
-}
-
-.component-image {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: block;
-  margin-bottom: 15px;
-}
-
-.error-list ul{
-  padding-left: 20px;
-}
-
-/* Rechte Seite (Gutbild & Schlechtbild untereinander) */
-.right-side {
-  width: 75%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.signal img {
-  width: 700px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.signal p {
-  text-align: center;
-  font-size: 0.9em;
-  margin-top: 5px;
-}
-
-.image-container {
-    text-align: center; /* Optional: Zentriert den Inhalt */
-    width: 100%; /* Sicherstellen, dass es den Container ausfüllt */
-}
-
-.source-text {
-    font-size: 0.4rem;
-    margin-top: 5px; /* Abstand zwischen Bild und Text */
-}
-
-
-
-
-
+/* -------------------- End of Theme -------------------- */

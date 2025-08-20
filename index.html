@@ -1,844 +1,155 @@
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <title>OmnAIScope - Die Zukunft der Fahrzeugdiagnose</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/reveal.js/dist/theme/black.css"
-      id="theme"
-    />
-    <link rel="stylesheet" href="main.css"/>
-    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  </head>
 
-  <body>
-    <div class="reveal">
-        <div class="slides">
-          <section>
-            <h2>Vertraulichkeitshinweis</h2>
-            <p>
-              Diese Präsentation ist streng vertraulich und ausschließlich für den vorgesehenen Empfänger bestimmt.
-              Jegliche Weitergabe oder Vervielfältigung ist untersagt.
-            </p>
-          </section>
-           <!-- Kapitel: Oszilloskope früher: -->
-           <section>
-            <section>
-              <h2>Oszilloskope früher</h2>
-              <p>
-                Seit 1897 in Betrieb und doch kaum im Alltag vertreten, weshalb?
-              </p>
-              <img src="images/OsziAlt.png" alt="Altes analog Oszilloskop" />
-            </section>
-            <section>
-              <h2>Nachteile an alten Oszilloskopen</h2>
-              <ul>
-                <li>Groß, schwer, sperrig</li>
-                <li>Komplizierte Bedienung, Triggereinstellung: ein Muss</li>
-                <li>Keine digitale Datenspeicherung</li>
-                <li>Schnell kaputt</li>
-              </ul>
-            </section>
-            <section>
-              <h2></h2>
-              <ul>
-                <li>Aufwendige Diagnose – Kein direkter Datenexport möglich</li>
-                <li>
-                  Keine Analyse-Software – Keine moderne Schnittstelle zur
-                  Auswertung
-                </li>
-                <li>Daten können nicht wieder aufgerufen werden</li>
-                <li>Hohes Maß an Vorkenntnissen nötig</li>
-              </ul>
-            </section>
-          </section>
-          
-            <!-- Erste Folie: Video -->
-            <section id="video-slide">
-                <video id="intro-video" width="100%" autoplay muted>
-                    <source src="ScopesVideo.mkv" type="video/mp4">
-                    Dein Browser unterstützt dieses Video nicht.
-                </video>
-            <section>
-            <!-- Zweite Folie: Überschrift erscheint nach Video -->
-                <h2>OmnAIScope: Fahrzeugdiagnose am Motor</h2>
-                <p>Präzise, einfach, machbar</p>
-            </section>
-            </section>
-        <!-- Das OmnAIScope: Das Oszilloskop für heute :-->
+<head>
+  <meta charset="utf-8" />
+  <title>OmnAIScope - Die Zukunft der Fahrzeugdiagnose</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section id="video-slide">
+        <video id="intro-video" width="100%" autoplay muted>
+          <source src="ScopesVideo.mkv" type="video/mp4">
+          Dein Browser unterstützt dieses Video nicht.
+        </video>
         <section>
-          <section>
-            <h2>Das OmnAIScope</h2>
-            <p>Das Oszilloskop von heute, für die Hosentasche</p>
-            <div class="slider-container">
-              <div class="slider">
-                <img
-                class="slide slide-image-RawImages"
-                src="images/OmnAIProduktBildFancy.png"
-                alt="OmnAIScope Oszilloskop"
-              />
-                <img
-                  class="slide slide-image-RawImages"
-                  src="images/Oszilloskop_Produktfoto_Freigestellt_5.png"
-                  alt="OmnAIScope Oszilloskop"
-                />
-                <img
-                  class="slide slide-image-RawImages"
-                  src="images/Oszilloskop_Produktfoto_Freigestellt_schraeg_Oben.png"
-                  alt="OmnAIScope Oszilloskop"
-                />
-                <img
-                  class="slide slide-image-RawImages"
-                  src="images/OmnAIScope_USB_Kabel_1.jpg"
-                  alt="OmnAIScope Oszilloskop"
-                />
-              </div>
-              <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-              <button class="next" onclick="moveSlide(1)">&#10095;</button>
-            </div>
-          </section>
-          <section>
-            <h2>Der Unterschied zu früher</h2>
-            <div class="slider-container">
-              <div class="slider">
-                <!-- Slide 1 -->
-                <div class="slide">
-                  <div class="slide-content">
-                    <img
-                      class="slide-image"
-                      src="images/OmnAIScopeKlein.png"
-                      alt="Vergleich Oszilloskop"
-                    />
-                    <div class="slide-text">
-                      <h3>Kompakt & mobil</h3>
-                      <p>
-                        Das OmnAIScope ist klein, tragbar und passt in jede
-                        Tasche.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="slide">
-                  <div class="slide-content">
-                    <video width=50% autoplay muted playsinline preload="auto">
-                      <source src="ScopeTest.mp4" type="video/mp4">
-                      Dein Browser unterstützt dieses Video nicht.
-                  </video>
-                    <div class="slide-text">
-                      <h3>Einfach bedienbar</h3>
-                      <p>Keine Triggereinstellung, keine Rädchen. Direkt messen.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="slide">
-                  <div class="slide-content">
-                    <img
-                      class="slide-image"
-                      src="images/SpeicherMenü.png"
-                      alt="Datenanalyse"
-                    />
-                    <div class="slide-text">
-                      <h3>Digitale Datenerfassung</h3>
-                      <p>
-                        Speichere Daten und analysiere sie bequem auf deinem
-                        Laptop oder Tablet.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 3 -->
-                <div class="slide">
-                  <div class="slide-content">
-                    <img
-                      class="slide-image"
-                      src="images/AlteMessungLaden.png"
-                      alt="Datenanalyse"
-                    />
-                    <div class="slide-text">
-                      <h3>Messdaten wiederverwenden</h3>
-                      <p>
-                        Messdaten wieder aufrufen, dem Kunden zur Verfügung
-                        stellen und mit anderen Teilen.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 4 -->
-                <div class="slide">
-                  <div class="slide-content">
-                    <img
-                      class="slide-image"
-                      src="images/UpdateProzess.png"
-                      alt="Datenanalyse"
-                    />
-                    <div class="slide-text">
-                      <h3>Softwareerweiterungen</h3>
-                      <p>
-                        Bleibe UpToDate. Automatische, kostenlose
-                        Softwareupdates. Stetige Analyseverbesserung.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 5 -->
-                <div class="slide">
-                  <div class="slide-content">
-                    <img
-                      class="slide-image"
-                      src="images/Datenanalyse.png"
-                      alt="Datenanalyse"
-                    />
-                    <div class="slide-text">
-                      <h3>Analyse ohne Vorkenntnisse</h3>
-                      <p>
-                        Durch den Vergleich mit der Datenbank. Manuell oder KI
-                        gestützt.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Slide 6 -->
-                <div class="slide">
-                  <div class="slide-content">
-                    <img
-                      class="slide-image"
-                      src="images/MessungZweiScopes.png"
-                      alt="Datenanalyse"
-                    />
-                    <div class="slide-text">
-                      <h3>Erweiterbar</h3>
-                      <p>
-                        Ob ein, zwei oder acht Kanäle, durch die Synchronisation
-                        beliebig erweiterbar.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!-- Slide 7 -->
-                <div class="slide">
-                  <div class="slide-content">
-                    <img
-                      class="slide-image"
-                      src="images/OmnAIPISystem.jpg"
-                      alt="Datenanalyse"
-                    />
-                    <div class="slide-text">
-                      <h3>Demnächst verfügbar: Über Kabel oder Netz</h3>
-                      <p>
-                        Empfange Daten wo du willst, wann du willst mit dem
-                        OmnAI-PI System
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Navigation -->
-              <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-              <button class="next" onclick="moveSlide(1)">&#10095;</button>
-            </div>
-          </section>
-          <section>
-            <h2>Technische Daten</h2>
-            <img src="images/TechDatenOmnAI.png" />
-          </section>
+          <h1>Monthly OmnAIView Meeting</h1>
+          <h2> July 2025</h2>
         </section>
-
-
-        <!-- Das Problem mit der Fahrzeuganalyse: -->
-        <section>
-          <section data-transition="zoom">
-            <h2>Warum Analyse direkt am Motor?</h2>
-            <p>Das Problem mit der aktuellen Fahrzeuganalyse</p>
-          </section>
-          <section>
-            <h2>Der aktuelle Diagnoseprozess</h2>
-            <p>Fehlercodes geben nur einen groben Rahmen wo der Fehler liegt</p>
-            <div style="width: 100%; height: 400px; overflow: auto; border: 1px solid #ccc; padding: 10px;background: #f8f9fa;">
-              <div class="mermaid">
-                graph TD;
-                    A[Kunde kommt mit defektem Auto] --> B[Werkstatt liest Fehlercode aus];
-                    B --> C{Möglichkeiten};
-                    C -->|Teil austauschen| D[Hoher Kostenaufwand];
-                    D --> E[1 Woche später - Fehler nicht behoben];
-                    E --> F[Kunde unzufrieden];
-                    F --> A;
-                    
-                    classDef error fill:#D9534F,stroke:#fff,stroke-width:2px,color:#fff;
-                    classDef warning fill:#F0AD4E,stroke:#fff,stroke-width:2px,color:#fff;
-
-                    class D error;
-                    class E error;
-                    class F error;
-                    class C warning;
-              </div>
-            </div>
-          </section>
-
-          <section>
-            <h2>Der verbesserte Diagnoseprozess</h2>
-            <div style="width: 100%; height: 400px;overflow: auto;border: 1px solid #ccc;padding: 10px;background: #f8f9fa;">
-            <div class="mermaid">
-                graph TD;
-                    A[Kunde kommt mit defektem Auto] --> B[Werkstatt liest Fehlercode aus];
-                    B --> C{Möglichkeiten};
-                    C -->|Teil austauschen| D[Hoher Kostenaufwand];
-                    D --> E[1 Woche später - Fehler nicht behoben];
-                    E --> F[Kunde unzufrieden];
-                    F --> A;
-                    
-                    C -->|Fehleranalyse| G[Werkstattmitarbeiter findet exakten Fehler];
-                    G --> H[Er tauscht oder repariert das richtige Teil];
-                    H --> I[Fehler überprüfbar];
-                    I --> J[Einmalige geringere Ausgaben];
-                    J --> K[Zufriedener Kunde];
-
-                    classDef success fill:#44AA44,stroke:#fff,stroke-width:2px,color:#fff;
-                    classDef process fill:#007BFF,stroke:#fff,stroke-width:2px,color:#fff;
-
-                    class G process;
-                    class H process;
-                    class I success;
-                    class J success;
-                    class K success;
-                </div>
-            </div>
-          </section>
-        </section>
-
-        <!-- Wie sich das OmnAIScope auf die Fahrzeuganalyse auswirkt: -->
-        <section>
-          <section>
-            <h2>Das OmnAIScope als Fahrzeugdiagnosetool</h2>
-          </section>
-
-          <section>
-            <h2>Das Werkstattkonzept</h2>
-            <div
-              style="
-                width: 100%;
-                height: 400px;
-                overflow: auto;
-                border: 1px solid #ccc;
-                padding: 10px;
-                background: #f8f9fa;
-              "
-            >
-              <div class="mermaid">
-                graph TD; OmnAIScopes --> Server; Server -.-> Datenanzeige;
-                Server -.-> Speicher; Server -.-> Analyse; Analyse -.->
-                Datenanzeige; Datenanzeige -.-> Server;
-              </div>
-            </div>
-          </section>
-          <section>
-            <h2>Funktionalität im Prerelease</h2>
-            <ul>
-              <li>Kompakt & mobil</li>
-              <li>Einfache Bedienung</li>
-              <li>Automatische Datenerfassung</li>
-              <li>Steuerung per Laptop/Tablet</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>Die Zielgruppe im Prerelease</h2>
-            <p>👨‍🔧 Werkstätten mit Erfahrung in Oszilloskopen</p>
-            <p>
-              🔍 Für alle, denen der Aufwand mit einem normalen Oszilloskop zu
-              hoch ist
-            </p>
-          </section>
-
-          <section>
-            <h2>Der Release des OmnAIScopes</h2>
-            <p>Funktionalitätserweiterung im nächsten Jahr:</p>
-            <ul>
-              <li>📱 <strong>Mobile Steuerung</strong></li>
-              <li>
-                🚗 <strong>Fahrbetrieb-Messungen</strong> – Aufnahmen während
-                der Fahrt
-              </li>
-              <li>💾 <strong>Speicher mit Gutbildern</strong></li>
-              <li>🩺 <strong>Digitale Fahrzeugakte</strong></li>
-              <li>📊 <strong>Einfache Analysen</strong></li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>Zielgruppe des Release:</h2>
-            <ul>
-              <li>
-                🔧 Werkstätten, die noch nie mit Oszilloskopen gearbeitet haben
-              </li>
-              <li>🔍 Werkstätten, die lieber reparieren statt ersetzen</li>
-              <li>👨‍🎓 Betriebe, die Azubis gezielt ausbilden möchten</li>
-              <li>💰 Werkstätten, die durch Messen Kosten sparen wollen</li>
-            </ul>
-          </section>
-          <section>
-            <h2>Die Zukunft von OmnAIScope</h2>
-            <p>Die langfristige Version</p>
-            <p></p>
-            <ul>
-              <li>📱 <strong>KI gestütze Fahrzeugdiagnose</strong></li>
-              <li>
-                🚗 <strong>Erweiterbare Diagnosegeräte</strong> – Temperatur,
-                EFeld, Vibration alles über eine Software
-              </li>
-              <li>💾 <strong>Intelligentes Supportsystem</strong></li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>Zielgruppe des OmnAIScopes auf lange Sicht</h2>
-            <ul>
-              <li>🔧 Von erfahrenen KFZ-Schraubern bis zu jungen Azubis</li>
-              <li>
-                Die Fahrzeugdiagnose ist nun für jeden einfach, günstig und
-                machbar
-              </li>
-            </ul>
-          </section>
-        </section>
-        <section>
-          <h2>Das OmnAIScope im Einsatz</h2>
-          <div class="slider-container">
-            <div class="slider">
-              <!-- <video class="slide" controls>
-                            <source src="video_2024-12-16_08-15-46.mp4" type="video/mp4">
-                            <source src="videos/omnAIScope.webm" type="video/webm">
-                            Dein Browser unterstützt das Videoformat nicht.
-                        </video>-->
-
-              <img
-                class="slide slide-image-RawImages"
-                src="images/photo_2024-12-16_08-15-21.jpg"
-                alt="OmnAIScope Oszilloskop Messung am Auto"
-              />
-              <img
-                class="slide slide-image-RawImages"
-                src="images/Batterieaufnahme.png"
-                alt="OmnAIScope Oszilloskop Messung am Auto"
-              />
-              <img
-                class="slide slide-image-RawImages"
-                src="images/OmnAIAuto1.jpg"
-                alt="OmnAIScope Oszilloskop Messung am Auto"
-              />
-              <img
-                class="slide slide-image-RawImages"
-                src="images/OmnAIKofferEinsatz.jpg"
-                alt="OmnAIScope Oszilloskop Messung am Auto"
-              />
-            </div>
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
-          </div>
-        </section>
-        <section>
-          <section>
-            <h2>Analysefälle mit dem Oszilloskop</h2>
-        </section>
-        
-        <section>
-            <h4>Steuerkettenüberprüfung: Rasseln beim Start</h4>       
-                <div class="slider-container">
-                    <div class="slider">
-                      <!-- Slide 1: Bauteil -->
-                      <div class="slide">
-                        <div class="slide-content">
-                          <div class="image-container">
-                            <img class="slide-image" src="images/KurbelwelleNockenwelle.png" alt="Gutbild">
-                            <p class="source-text" style="font-size:0.7rem;">Quelle: <a href="https://www.autolastgh.com/de/post/was-ist-der-unterschied-zwischen-einer-nockenwelle-und-einer-kurbelwelle" target="_blank">autolastgh.com</a></p>
-                          </div>                        
-                            <div class="slide-text">
-                                <h3>Steuerkettenüberprüfung</h3>
-                                <p>Sensoren : Nockenwellensensor / Kurbelwellensensor</p>
-                            </div>
-                        </div>
-                    </div>
-                        <!-- Slide 1: Gutbild -->
-                        <div class="slide">
-                            <div class="slide-content">
-                                <img class="slide-image" src="images/SinCosSteuerketteGutbild.png" alt="Gutbild">
-                                <div class="slide-text">
-                                    <h3>Gutbild</h3>
-                                    <p>Hochpunkte liegen übereinander. Normale Steuerzeiten, keine Verschiebung erkennbar. </p>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <!-- Slide 2: Leichte Verschiebung -->
-                        <div class="slide">
-                            <div class="slide-content">
-                                <img class="slide-image" src="images/SinCosSteuerketteSchlechtbild.png" alt="Leichte Verschiebung">
-                                <div class="slide-text">
-                                    <h3>Leichte Dehnung</h3>
-                                    <p>Hochpunkte verschoben. Geringe Abweichung, leichte Dehnung. Starke Abweichung -> Steuerzeiten verschoben</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                          <div class="slide-content">
-                              <div class="slide-text">
-                                  <h3>Analyseinformationen</h3>
-                                  <p>Kurbelwellensignal, Nockenwellensignal</p>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
-        
-                    <!-- Navigation -->
-                    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                    <button class="next" onclick="moveSlide(1)">&#10095;</button>
-                </div>
-        </section>
-        <section>
-          <h4>Batteriemessung: Relative Kompression</h4>       
-              <div class="slider-container">
-                  <div class="slider">
-                    <!-- Slide 1: Bauteil -->
-                    <div class="slide">
-                      <div class="slide-content">                     
-                          <div class="slide-text">
-                              <h3>Kompressionsmessung</h3>
-                              <p>Messkomponente: Batterie</p>
-                              <p>Zündung unterdrückt</p>
-                          </div>
-                      </div>
-                  </div>
-                      <!-- Slide 1: Gutbild -->
-                      <div class="slide">
-                          <div class="slide-content">
-                              <img class="slide-image" src="images/RelKompGutbildOszi.png" alt="Gutbild">
-                              <div class="slide-text">
-                                  <h3>Gutbild</h3>
-                                  <p>Alle Zylinder weisen die gleiche Kompression auf.</p>
-                              </div>
-                          </div>
-                      </div>
-      
-                      <!-- Slide 2: Leichte Verschiebung -->
-                      <div class="slide">
-                          <div class="slide-content">
-                              <img class="slide-image" src="images/RelKompSchlechtBildVergleichTheo.png" alt="relative Kompression Vergleich">
-                              <div class="slide-text">
-                                  <h3>Ein Zylinder weist eine zu geringe Kompression auf</h3>
-                                  <p>.</p>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="slide">
-                        <div class="slide-content">
-                            <div class="slide-text">
-                                <h3>Analyseinformationen</h3>
-                                <p>Anzahl der Zylinder, Batteriesignal, opt.: Nockenwellesignal</p>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-      
-                  <!-- Navigation -->
-                  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                  <button class="next" onclick="moveSlide(1)">&#10095;</button>
-              </div>
-      </section>
-      <section>
-        <h4>Luftmassenmesser: Schwarzer Rauch, weißer Rauch, erhöhter Kraftstoffverbrauch?</h4>       
-            <div class="slider-container">
-                <div class="slider">
-                  <!-- Slide 1: Bauteil -->
-                  <div class="slide">
-                    <div class="slide-content">
-                      <div class="image-container">
-                        <img class="slide-image" src="images/LuMaMeBild.png" alt="Luftmassenmesser Bild">
-                        <p class="source-text" style="font-size:0.7rem;">Quelle: <a href="https://www.amz.de/der-tod-kommt-schleichend-defekte-luftmassenmesser-finden-und-ersetzen" target="_blank">amz.de</a></p>
-                      </div>                        
-                        <div class="slide-text">
-                            <h3>Luftmassenmesserüberprüfung</h3>
-                            <p>Messkomponente: Luftmassenmesser</p>
-                        </div>
-                    </div>
-                </div>
-                    <!-- Slide 1: Gutbild -->
-                    <div class="slide">
-                        <div class="slide-content">
-                            <img class="slide-image" src="images/LuMaMEGutbildTheo.png" alt="Gutbild Luftmassenmesser">
-                            <div class="slide-text">
-                                <h3>Gutbild</h3>
-                                <p>Gleichmäßiges steigen und sinken bei Gasstoß. Spannung über 4 V</p>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <!-- Slide 2: Leichte Verschiebung -->
-                    <div class="slide">
-                        <div class="slide-content">
-                            <img class="slide-image" src="images/LuMaMeSchlechtBild.png" alt="Schlecht Bild Luftmassenmesser">
-                            <div class="slide-text">
-                                <h3>Schlechtbild</h3>
-                                <p>Gleichmäßiger Verlauf, Spannung unter 4 V. Luftmassenmesser veraltet, verschmutzt o. Undichtigkeit</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="slide-content">
-                            <div class="slide-text">
-                                <h3>Analyseinformationen</h3>
-                                <p>Fahrzeugtyp, Luftmassenmessersignal</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <!-- Navigation -->
-                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                <button class="next" onclick="moveSlide(1)">&#10095;</button>
-            </div>
-    </section>
-      </section>
-        <section>
-          <section>
-            <h2> Das OmnAIScope Netzwerk</h2>
-          </section>
-          <section>
-            <h2>Soziale Medien und Foren</h2>
-            <div class="social-container">
-              <div class="social-icons">
-               <!--<a href="https://www.instagram.com/deinprofil" target="_blank" title="Instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>-->
-                <a href="https://www.facebook.com/profile.php?id=61560779755069" target="_blank" title="Facebook">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://x.com/Omnaiproject" target="_blank" title="Twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </div>
-              <div class="forum-icons">
-                <a href="https://t.me/+VP3nU4hQN0AyMWIy" target="_blank" title="Telegram Channel">
-                  <i class="fab fa-telegram-plane"></i>
-                </a>
-              </div>
-            </div>
-          </section>
-          <section>
-            <h2> Support</h2>
-             unter  +49 234 585 458 13
-          </section>
-          <!--<section class="partners">
-            <h2>OmnAIScope Händler</h2>
-            <div class="partner-container">
-              <div class="partner">
-                <img src="images/reichelt.png" alt="Partner 1" />
-              </div>
-              <div class="partner">
-                <img src="images/K+KTuning.png" alt="Partner 2" />
-              </div>
-              <div class="partner">
-                <img src="images/ccd.jpg" alt="Partner 3" />
-              </div>
-            </div>
-          </section> --> 
-          <section>
-            <p>
-              <strong>Wichtige Informationen zum OmnAIScope:</strong>
-            </p>
-            <div class="links">
-              <div class="links-container">
-                <div class="link">
-                  <p style="font-size: 0.3em;">Informationen</p>
-                  <a href="https://omnai-scope.auto-intern.de/" target="_blank">
-                      <img src="https://api.screenshotmachine.com?key=e32728&url=https%3A%2F%2Fomnai-scope.auto-intern.de%2F/&dimension=1024x768" 
-                           alt="Screenshot von OmnAIScopeseite" 
-                           style="width: 80%; border-radius: 10px;">
-                  </a>
-                </div>
-                <div class="link">
-                  <p style="font-size: 0.3em;">Support</p>
-                  <a href="https://omnai-scope.auto-intern.de/" target="_blank">
-                      <img src="https://api.screenshotmachine.com?key=e32728&url=https%3A%2F%2Fomnai-scope.auto-intern.de/support%2F/&dimension=1024x768" 
-                           alt="Screenshot von OmnAIScopeseite" 
-                           style="width: 80%; border-radius: 10px;">
-                  </a>
-                </div>
-                <div class="link">
-                  <p style="font-size: 0.3em;">Newsletter</p>
-                  <a href="https://omnai-scope.auto-intern.de/" target="_blank">
-                      <img src="https://api.screenshotmachine.com?key=e32728&url=https%3A%2F%2Fomnai-scope.auto-intern.de/newsletter%2F/&dimension=1024x768" 
-                           alt="Screenshot von OmnAIScopeseite" 
-                           style="width: 80%; border-radius: 10px;">
-                  </a>
-                </div>
-                
-                <div class="link">
-                  <p style="font-size: 0.3em;">Shop</p>
-                  <a href="https://omnai-scope.auto-intern.de/" target="_blank">
-                      <img src="https://api.screenshotmachine.com?key=e32728&url=https://www.auto-intern.de/shop/diagnose-komplettsysteme/281/omnaiscope-beta-version?c=114/support%2F/&dimension=1024x768" 
-                           alt="Screenshot von OmnAIScopeseite" 
-                           style="width: 80%; border-radius: 10px;">
-                  </a>
-                </div>
-              </div>
-            </div>
-          </section>
       </section>
       <section>
         <section>
-          <h2>Das OmnAIScope</h2>
-          <p>Unsere Angebote</p>
-        </section>
-          <section class="product-slide">
-            <div class="product">
-              <!-- Linker Bereich: Bild -->
-              <div class="product-image">
-                <img src="images/WerkstattkofferLight.jpg" alt="OmnAIScope-Koffer Light">
-              </div>
-              <!-- Rechter Bereich: Text -->
-              <div class="product-text">
-                <h3>OmnAIScope-Koffer Light</h3>
-                <p><strong>Preis:</strong> 195,00€</p>
-                <p style="font-size:0.6em;">Lieferumfang: </p>
-                <ul>
-                  <li>1 x OmnAIScope</li>
-                  <li>1 x BNC zu Banane Adapter</li>
-                  <li>1 x USB-C zu USB-A Kabel</li>
-                  <li>1 x Koffer</li>
-                </ul>
-                <p><strong>Zielgruppe:</strong> Einsteiger, Hobbybastler</p>
-              </div>
-            </div>
-          </section>
-           <section class="product-slide">
-          <div class="product">
-            <!-- Linker Bereich: Bild -->
-            <div class="product-image">
-              <img src="images/OmnAIScopeKoffer.jpg" alt="Werkstattkoffer Basic Bild">
-            </div>
-            <!-- Rechter Bereich: Text -->
-            <div class="product-text">
-              <h3>OmnAIScope Werkstattkoffer Basic</h3>
-              <p><strong>Preis:</strong> 220,65€</p>
-              <p style="font-size:0.6em;">Lieferumfang: </p>
-              <ul>
-                <li>1 x OmnAIScope</li>
-                <li>2 x Laborkabel</li>
-                <li>2 x Messpitzen</li>
-                <li>2 x Stechklemmen</li>
-                <li>1 x BNC zu Banane Adapter</li>
-                <li>1 x USB-C zu USB-A Kabel</li>
-                <li>1 x Koffer</li>
-              </ul>
-              <p><strong>Zielgruppe:</strong> Einsteiger, Hobbybastler, KFZ-Betriebe</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="product-slide">
-          <div class="product">
-            <!-- Linker Bereich: Bild -->
-            <div class="product-image">
-              <img src="images/WerkstattKoffeDuo.jpg" alt="Werkstattkoffer Duo Bild">
-            </div>
-            <!-- Rechter Bereich: Text -->
-            <div class="product-text">
-              <h3>OmnAIScope Werkstattkoffer Basic Duo </h3>
-              <p><strong>Preis:</strong> 394,99€</p>
-              <p style="font-size:0.6em;">Lieferumfang: </p>
-              <ul>
-                <li>2 x OmnAIScope</li>
-                <li>4 x Laborkabel</li>
-                <li>4 x Messpitzen</li>
-                <li>4 x Stechklemmen</li>
-                <li>2 x BNC zu Banane Adapter</li>
-                <li>2 x USB-C zu USB-A Kabel</li>
-                <li>1 x Koffer</li>
-              </ul>
-              <p><strong>Zielgruppe:</strong> Einsteiger, Hobbybastler, KFZ-Betriebe</p>
-            </div>
-          </div>
-        </section>
+          <h2> Overview of the current Project</h2>
+          <img src="images/OmnAIView_Repository_15072025.jpg">
         </section>
         <section>
-          <h2 style="font-size: 1.0em;">Unser Ziel</h2>
-          <p style="font-size: 0.6em; ">
-            Effiziente, kostensparende und präzise Fahrzeugdiagnose für jede Werkstatt.
-          </p>
-          <!-- Ansprechpartner-Bereich -->
-          <div class="ansprechpartner">
-            <h3>Ihre Ansprechpartnerin</h3>
-            <div class="contacts-container">
-              <!-- Ansprechpartner 2 -->
-              <div class="contact">
-                <img src="images/AnnaBild.png" alt="Anna Theimann">
-                <h4>Anna Theimann</h4>
-                <p class="position">Produktmanagerin OmnAIScope</p>
-                <p class="email">
-                  <a href="mailto:anna.theimann@gruppe.ai">anna.theimann@gruppe.ai</a>
-                </p>
-                <p class="phone"> +49 234 585 458 13 </p>
-              </div>
-            </div>
-          </div>
+          <h2>Statistics</h2>
+          <img src="images/OmnAIView_Statistics_15072025.jpg">
         </section>
-      </div>
+        <section class="video-slide">
+          <h2>Newest Release : v1.2.0</h2>
+          <video autoplay muted>
+            <source src="v1.2.0.mp4" type="video/mp4">
+            Dein Browser unterstützt dieses Video nicht.
+          </video>
+        </section>
+        <section class="bullet-slide">
+          <h2>New features:</h2>
+          <ul>
+            <li> Dark Mode </li>
+            <li> Workshop Mode</li>
+            <li> Start/Stop Button</li>
+            <li> OmnAIScope polling</li>
+            <li> Import CSV Files from old software</li>
+            <li> Relative/Actual time on x-axis</li>
+            <li> Version number in software</li>
+            <li> Bug fixes</li>
+            <li> Documentation and CI</li>
+          </ul>
+        </section>
+        <section class="img-slide">
+          <h2> 11 Contributers especially from the SE-Lab project </h2>
+          <img src="images/OmnAIView_Contributers_15072025.jpg">
+        </section>
+        <section class="img-slide">
+          <h2> Youtube: How to build OmnAIView </h2>
+          <a href="https://www.youtube.com/watch?v=A3s62w283kc"></a>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>Presentation of the main discussions, PRs and issues</h2>
+        </section>
+        <section class="bullet-slide">
+          <h2>Interesting PRs</h2>
+          <ul>
+            <li>#89 Issue template</li>
+            <li>#97 Adapt Polling and disconnect WebSocket</li>
+          </ul>
+        </section>
+        <section class="bullet-slide">
+          <h2>Interesting Issues</h2>
+          <ul>
+            <li>#109, #108, #95 How to setup the Toolbar </li>
+          </ul>
+          <img src="images/OmnAIView_Issues_15072025.jpg">
+        </section>
+        <section class="bullet-slide">
+          <h2>Interesting Discussions</h2>
+          <ul>
+            <li>#104 General setup for contributers</li>
+          </ul>
+          <img src="images/OmnAIView_Discussions_15072025.jpg">
+        </section>
+      </section>
+      <section class="bullet-slide">
+        <h2>Next steps</h2>
+        <ul>
+          <li>Setup full workflow -> CI releases</li>
+          <li>Integration of Toolbar functionality</li>
+          <li>Zoom and more graph functions </li>
+        </ul>
+      </section>
+      <section class="bullet-slide">
+        <h2>Questions and Feedback</h2>
+      </section>
     </div>
+  </div>
 
-    <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.3/mermaid.min.js"></script>
-    <script>
-      Reveal.initialize({
-        controls: true,
-        progress: true,
-        center: true,
-        hash: true,
-        transition: "slide",
-      });
-      mermaid.initialize({ startOnLoad: true });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const sliders = document.querySelectorAll(".slider-container");
-
-        sliders.forEach((sliderContainer, index) => {
-          const slider = sliderContainer.querySelector(".slider");
-          const slides = sliderContainer.querySelectorAll(".slide");
-          const prevButton = sliderContainer.querySelector(".prev");
-          const nextButton = sliderContainer.querySelector(".next");
-
-          let slideIndex = 0;
-
-          function moveSlide(step) {
-            slideIndex += step;
-
-            if (slideIndex >= slides.length) slideIndex = 0;
-            if (slideIndex < 0) slideIndex = slides.length - 1;
-
-            slider.style.transform = `translateX(-${slideIndex * 100}%)`;
-          }
-
-          prevButton.addEventListener("click", () => moveSlide(-1));
-          nextButton.addEventListener("click", () => moveSlide(1));
-        });
-      });
-      document.addEventListener("DOMContentLoaded", function () {
-        const video = document.getElementById("intro-video");
-    
-        // Wenn das Video zu Ende ist, gehe zur nächsten Folie
-        video.addEventListener("ended", function () {
-            Reveal.next(); // Wechselt zur nächsten Folie
-        });
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.1.3/mermaid.min.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+      transition: "slide",
     });
-    
-    </script>
-  </body>
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sliders = document.querySelectorAll(".slider-container");
+
+      sliders.forEach((sliderContainer, index) => {
+        const slider = sliderContainer.querySelector(".slider");
+        const slides = sliderContainer.querySelectorAll(".slide");
+        const prevButton = sliderContainer.querySelector(".prev");
+        const nextButton = sliderContainer.querySelector(".next");
+
+        let slideIndex = 0;
+
+        function moveSlide(step) {
+          slideIndex += step;
+
+          if (slideIndex >= slides.length) slideIndex = 0;
+          if (slideIndex < 0) slideIndex = slides.length - 1;
+
+          slider.style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        prevButton.addEventListener("click", () => moveSlide(-1));
+        nextButton.addEventListener("click", () => moveSlide(1));
+      });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("intro-video");
+
+      // Wenn das Video zu Ende ist, gehe zur nächsten Folie
+      video.addEventListener("ended", function () {
+        Reveal.next(); // Wechselt zur nächsten Folie
+      });
+    });
+
+  </script>
+</body>
+
 </html>
